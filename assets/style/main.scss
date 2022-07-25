@@ -1,0 +1,60 @@
+$purple: #563AD6;
+$aqua: #3ABAD6;
+$navy: #02044A;
+$white: #FFFFFF;
+$sofpur: #EAEAF4;
+$darpur: #777790;
+$headpur: #B4B5C9;
+$lilpur: #F9F9FB;
+//mixin-font-face
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff ttf svg) {
+    $src: null;
+    $extmods: (
+            svg: "#" + str-replace($name, " ", "_")
+    );
+    $formats: (
+            ttf: "truetype"
+    );
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+        font-display: swap;
+    }
+}
+
+@include font-face("rubik", "font/Rubik/static/Rubik-Regular", 400, normal, woff2 woff ttf svg eot);
+@include font-face("rubik", "font/Rubik/static/Rubik-Medium", 500, normal, woff2 woff ttf svg eot);
+@include font-face("rubik", "font/Rubik/static/Rubik-SemiBold", 600, normal, woff2 woff ttf svg eot);
+body{
+    font-family: rubik, sans-serif;
+}
+.navbar-tp {
+    padding-top: 30px;
+    .navbar-nav{
+        li {
+            padding-left: 50px;
+        }
+        .active{
+            color: $purple !important;
+            font-weight: 600;
+        }
+        .nav-link {
+            color: $navy;
+        }
+    }
+}

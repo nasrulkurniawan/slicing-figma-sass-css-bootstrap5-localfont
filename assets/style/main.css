@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("font/Rubik/static/Rubik-Regular.woff2") format("woff2"), url("font/Rubik/static/Rubik-Regular.woff") format("woff"), url("font/Rubik/static/Rubik-Regular.ttf") format("truetype"), url("font/Rubik/static/Rubik-Regular.svg#rubik") format("svg"), url("font/Rubik/static/Rubik-Regular.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: "rubik";
+  font-style: normal;
+  font-weight: 500;
+  src: url("font/Rubik/static/Rubik-Medium.woff2") format("woff2"), url("font/Rubik/static/Rubik-Medium.woff") format("woff"), url("font/Rubik/static/Rubik-Medium.ttf") format("truetype"), url("font/Rubik/static/Rubik-Medium.svg#rubik") format("svg"), url("font/Rubik/static/Rubik-Medium.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: "rubik";
+  font-style: normal;
+  font-weight: 600;
+  src: url("font/Rubik/static/Rubik-SemiBold.woff2") format("woff2"), url("font/Rubik/static/Rubik-SemiBold.woff") format("woff"), url("font/Rubik/static/Rubik-SemiBold.ttf") format("truetype"), url("font/Rubik/static/Rubik-SemiBold.svg#rubik") format("svg"), url("font/Rubik/static/Rubik-SemiBold.eot") format("eot");
+  font-display: swap;
+}
+body {
+  font-family: rubik, sans-serif;
+}
+
+.navbar-tp {
+  padding-top: 30px;
+}
+.navbar-tp .navbar-nav li {
+  padding-left: 50px;
+}
+.navbar-tp .navbar-nav .active {
+  color: #563AD6 !important;
+  font-weight: 600;
+}
+.navbar-tp .navbar-nav .nav-link {
+  color: #02044A;
+}/*# sourceMappingURL=main.css.map */
